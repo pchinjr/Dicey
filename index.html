@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css" type="text/css" />
+        <title>Dice Wars</title>
+    </head>
+    
+    <body>
+    <div class="jumbotron text-center">
+        <h1>Dicey</h1>
+        <p>A game of chance and aggression</p>
+        <h2 id="winner"></h2>
+    </div>        
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-2">
+                <h3><span class="glyphicon glyphicon-chevron-right blue"></span> Player 1</h3>
+                <p>Health Status <span id="aHealth">30</span></p>
+                <p>Number of Dice <span id="aDice">1</span></p>
+                
+            </div>
+            <div class="col-xs-4 col-xs-offset-2">
+                <h3><span class="glyphicon glyphicon-chevron-right red"></span> Player 2</h3>
+                <p>Health Status <span id="bHealth">30</span></p>
+                <p>Number of Dice <span id="bDice">1</span></p>
+            </div>
+        </div>
+        <br/>
+        
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-2 aControls">
+                <button class="btn btn-primary" id="aRoll">Roll Your Dice</button>
+                <h3>Player A rolls a <span id="aCurrentRoll">_</span></h3>
+                <button class="btn btn-primary" id="aClickAttack" >Attack for <span id="attackB">_</span></button> 
+                <br/><br/>
+                <button class="btn btn-primary" id="aClickSelfAttack" >Take damage for <span id="selfDamageA">_</span> and gain 1 additional die</button>
+            </div>
+            
+            <div class="col-xs-4 col-xs-offset-2 bControls">
+                <button class="btn btn-primary" id="bRoll" >Roll Your Dice</button>
+                <h3>Player B rolls a <span id="bCurrentRoll">_</span></h3>
+                <button class="btn btn-primary" id="bClickAttack">Attack for <span id="attackA">_</span></button>
+                <br/><br/>
+                <button class="btn btn-primary" id="bClickSelfAttack">Take damage for <span id="selfDamageB">_</span> and gain 1 additional die</button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xs-12 col-xs-offset-2">
+                <h3>Rules of the Game</h3>
+                <ol>
+                    <li>Player 1 goes first</li>
+                    <li>Each player starts with 1 six sided die</li>
+                    <li>Roll Your Dice</li>
+                    <li>You can either attack for what you roll</li>
+                    <li>Or you can take damage and gain an additional six sided die on your next turn</li>
+                    <li>First person to 0 health loses</li>
+                </ol>
+            </div>
+        </div>
+        
+    </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>    
+    <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>
