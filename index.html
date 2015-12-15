@@ -14,30 +14,23 @@
     </div>        
     <div class="container">
         <div class="row">
-            <div class="col-xs-4 col-xs-offset-2">
+            <div class="col-xs-4 col-xs-offset-2 player-1">
                 <h3><span class="glyphicon glyphicon-chevron-right blue"></span> Player 1</h3>
                 <p>Health Status <span id="aHealth">30</span></p>
                 <p>Number of Dice <span id="aDice">1</span></p>
-                
-            </div>
-            <div class="col-xs-4 col-xs-offset-2">
-                <h3><span class="glyphicon glyphicon-chevron-right red"></span> Player 2</h3>
-                <p>Health Status <span id="bHealth">30</span></p>
-                <p>Number of Dice <span id="bDice">1</span></p>
-            </div>
-        </div>
-        <br/>
-        
-        <div class="row">
-            <div class="col-xs-4 col-xs-offset-2 aControls">
+
                 <button class="btn btn-primary" id="aRoll">Roll Your Dice</button>
                 <h3>Player A rolls a <span id="aCurrentRoll">_</span></h3>
                 <button class="btn btn-primary" id="aClickAttack" >Attack for <span id="attackB">_</span></button> 
                 <br/><br/>
                 <button class="btn btn-primary" id="aClickSelfAttack" >Take damage for <span id="selfDamageA">_</span> and gain 1 additional die</button>
             </div>
-            
-            <div class="col-xs-4 col-xs-offset-2 bControls">
+
+            <div class="col-xs-4 col-xs-offset-2 player-2">
+                <h3><span class="glyphicon glyphicon-chevron-right red"></span> Player 2</h3>
+                <p>Health Status <span id="bHealth">30</span></p>
+                <p>Number of Dice <span id="bDice">1</span></p>
+
                 <button class="btn btn-primary" id="bRoll" >Roll Your Dice</button>
                 <h3>Player B rolls a <span id="bCurrentRoll">_</span></h3>
                 <button class="btn btn-primary" id="bClickAttack">Attack for <span id="attackA">_</span></button>
