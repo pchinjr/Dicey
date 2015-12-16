@@ -1,10 +1,7 @@
-//player a
-var aDice = 1;
-var aHealth = 30;
-//player b
-var bDice = 1;
-var bHealth = 30;
+var player1 = { dom: $('.player-1'), health:30, dice: 1};
+var player2 = { dom: $('.player-2'), health:30, dice: 1 };
 
+var isPlayer1Turn = true;
 
 //roll a single die
 function rollDie(sides) {
@@ -18,76 +15,62 @@ function rollDice(number, sides) {
     return total;
 }
 
-//cause damage to player b
-function attackB(hit) {
-    bHealth = bHealth - hit;
-    $('#bHealth').html(bHealth);
-    winner();
+//gameplay roll
+function roll(player) {
+    player.dom.find('.currentRoll, .attack, .takeDamage').html( rollDice(player.dice, 6));
 }
 
-//cause damage to player a
-function attackA(hit) {
-    aHealth = aHealth - hit;
-    $('#aHealth').html(aHealth);
-    winner();
+//attack other player
+function attack(player, hit) {
+    player.health = player.health - hit;
+    player.dom.find('.health').html(player.health);
+    checkWinner();
 }
 
-//attack selfA and add one die
-function attackSelfA(hit) {
-    aHealth = aHealth - hit;
-    $('#aHealth').html(aHealth);
-    aDice = aDice + 1;
-    $('#aDice').html(aDice);
-}
-
-//attack selfB and add one die
-function attackSelfB(hit) {
-    bHealth = bHealth - hit;
-    $('#bHealth').html(bHealth);
-    bDice = bDice + 1;
-    $('#bDice').html(bDice);
+//take damage
+function takeDamage(player, hit) {
+    player.health = player.health - hit;
+    player.dom.find('.health').html(player.health);
+    player.dice = player.dice + 1;
+    player.dom.find('.dice').html(player.dice);
+    
 }
 
 //check for winner
-function winner() {
-    if( parseInt( $('#aHealth').text(), 10) <= 0) {
+function checkWinner() {
+    if ( parseInt( player1.dom.find('.health').text(), 10) <= 0) {
         $('#winner').html('Player 2 Wins!');
-    } else if ( parseInt($('#bHealth').text(), 10) <= 0) {
+    } else if ( parseInt( player2.dom.find('.health').text(), 10) <= 0) {
         $('#winner').html('Player 1 Wins!');
     } else {
       $('#winner').html('');       
     }
 }
 
-//Payer A Controls  
-//roll dice and set attack numbers for player a
-$("#aRoll").on('click', function() {
-    $('#aCurrentRoll, #attackB, #selfDamageA').html((rollDice(aDice, 6)));
-});
-    
-//attack player b
-$('#aClickAttack').on('click', function() {
-    attackB(parseInt($('#attackB').text(), 10));
+//players roll
+player1.dom.find(".roll").on( 'click', function() {
+    roll(player1); 
 });
 
-//attack self A
-$('#aClickSelfAttack').on('click', function() {
-    attackSelfA(parseInt($('#selfDamageA').text(), 10));
+player2.dom.find(".roll").on( 'click', function() {
+    roll(player2); 
+});
+
+//players attack
+player1.dom.find(".clickAttack").on( 'click', function() {
+   attack( player2, parseInt( player1.dom.find('.attack').text(), 10) );
+});
+
+player2.dom.find(".clickAttack").on( 'click', function() {
+   attack( player1, parseInt( player2.dom.find('.attack').text(), 10) );
 });
 
 
-//Player B Controls
-//roll dice and set attack numbers for player B
-$("#bRoll").on('click', function() {
-    $('#bCurrentRoll, #attackA, #selfDamageB').html((rollDice(bDice, 6)));
+//take damage
+player1.dom.find(".clickTakeDamage").on( 'click', function() {
+    takeDamage( player1, parseInt( player1.dom.find('.takeDamage').text(), 10) );
 });
 
-//attack player A
-$('#bClickAttack').on('click', function() {
-    attackA(parseInt($('#attackA').text(), 10));
-});
-
-//attack self B
-$('#bClickSelfAttack').on('click', function() {
-    attackSelfB(parseInt($('#selfDamageB').text(), 10));
+player2.dom.find(".clickTakeDamage").on( 'click', function() {
+    takeDamage( player2, parseInt( player2.dom.find('.takeDamage').text(), 10) );
 });
