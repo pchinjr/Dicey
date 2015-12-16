@@ -14,7 +14,8 @@
     </div>        
     <div class="container">
         <div class="row">
-            <div class="col-xs-4 col-xs-offset-2 player-1">
+            
+            <div class="col-xs-4 col-xs-offset-1 player-1">
                 <h3><span class="glyphicon glyphicon-chevron-right blue"></span> Player 1</h3>
                 <p>Health Status <span class="health">30</span></p>
                 <p>Number of Dice <span class="dice">1</span></p>
@@ -25,7 +26,7 @@
                 <br/><br/>
                 <button class="btn btn-primary clickTakeDamage">Take damage for <span class="takeDamage">_</span> and gain 1 additional die</button>
             </div>
-
+            
             <div class="col-xs-4 col-xs-offset-2 player-2">
                 <h3><span class="glyphicon glyphicon-chevron-right red"></span> Player 2</h3>
                 <p>Health Status <span class="health">30</span></p>
@@ -37,6 +38,12 @@
                 <br/><br/>
                 <button class="btn btn-primary clickTakeDamage"disabled>Take damage for <span class="takeDamage">_</span> and gain 1 additional die</button>
             </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="animation"></div>
+            <div class="animation2"></div>
         </div>
         
         <div class="row">
@@ -54,8 +61,11 @@
         </div>
         
     </div>
+    
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>    
+    <script type="text/javascript" src="jquery.animateSprite.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="animate.js"></script>
     </body>
 </html>

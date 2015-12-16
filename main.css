@@ -12,3 +12,17 @@
     text-shadow: black 0.3em 0.3em 0.3em;
 }
 
+.animation {
+    background: url(spritesheet.png);
+    width: 567px;
+    height: 566px;
+    display: inline-block;
+}
+
+.animation2 {
+    background: url(spritesheet.png);
+    width: 567px;
+    height: 566px;
+    display: inline-block;
+    transform: scale(-1, 1)
+}
