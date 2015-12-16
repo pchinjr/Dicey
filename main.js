@@ -1,8 +1,6 @@
 var player1 = { dom: $('.player-1'), health:30, dice: 1};
 var player2 = { dom: $('.player-2'), health:30, dice: 1 };
 
-var isPlayer1Turn = true;
-
 //roll a single die
 function rollDie(sides) {
    return(Math.floor(Math.random() * sides));
@@ -74,3 +72,9 @@ player1.dom.find(".clickTakeDamage").on( 'click', function() {
 player2.dom.find(".clickTakeDamage").on( 'click', function() {
     takeDamage( player2, parseInt( player2.dom.find('.takeDamage').text(), 10) );
 });
+
+//start game
+//player 2 controls are disabled
+//when player 1 attacks enable player 2 controlls
+//disable player 1 controlls
+//when player 2 attacks enable player 1 controlls
