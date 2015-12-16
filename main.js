@@ -45,36 +45,50 @@ function checkWinner() {
     }
 }
 
+function endTurn(player) {
+    
+    if(player === 'player1') {
+        player1.dom.find('.roll, .clickAttack, .clickTakeDamage').prop("disabled", true);
+        player2.dom.find('.roll, .clickAttack, .clickTakeDamage').prop("disabled", false);
+        player1.dom.find('.currentRoll, .attack, .takeDamage').html("_");
+    } else {
+        player2.dom.find('.roll, .clickAttack, .clickTakeDamage').prop("disabled", true);
+        player1.dom.find('.roll, .clickAttack, .clickTakeDamage').prop("disabled", false);
+        player2.dom.find('.currentRoll, .attack, .takeDamage').html("_");
+    }
+}
+
 //players roll
 player1.dom.find(".roll").on( 'click', function() {
-    roll(player1); 
+    roll(player1);
+    player1.dom.find('.roll').prop("disabled", true);
 });
 
 player2.dom.find(".roll").on( 'click', function() {
-    roll(player2); 
+    roll(player2);
+    player2.dom.find('.roll').prop("disabled", true);
 });
 
 //players attack
 player1.dom.find(".clickAttack").on( 'click', function() {
    attack( player2, parseInt( player1.dom.find('.attack').text(), 10) );
+   endTurn('player1');
+   
 });
 
 player2.dom.find(".clickAttack").on( 'click', function() {
    attack( player1, parseInt( player2.dom.find('.attack').text(), 10) );
+   endTurn('player2');
 });
 
 
 //take damage
 player1.dom.find(".clickTakeDamage").on( 'click', function() {
     takeDamage( player1, parseInt( player1.dom.find('.takeDamage').text(), 10) );
+    endTurn('player1');
 });
 
 player2.dom.find(".clickTakeDamage").on( 'click', function() {
     takeDamage( player2, parseInt( player2.dom.find('.takeDamage').text(), 10) );
+    endTurn('player2');
 });
-
-//start game
-//player 2 controls are disabled
-//when player 1 attacks enable player 2 controlls
-//disable player 1 controlls
-//when player 2 attacks enable player 1 controlls
