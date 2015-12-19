@@ -23,8 +23,8 @@
     background: url(spritesheet.png);
     width: 567px;
     height: 566px;
+    transform: scale(-1, 1);
     display: inline-block;
-    transform: scale(-1, 1)
 }
 
 .showDice {

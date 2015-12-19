@@ -10,13 +10,15 @@
     <div class="jumbotron text-center">
         <h1>Dicey</h1>
         <p>A game of chance and aggression</p>
-        <h2 id="winner"></h2>
+        <h1 id="winner"></h1>
     </div>        
     <div class="container">
+        
         <div class="row">
             
             <div class="col-xs-4 col-xs-offset-1 player-1">
                 <h3><span class="glyphicon glyphicon-chevron-right blue"></span> Player 1</h3>
+                
                 <div class="progress">
                     <div class="progress-bar healthBar" role="progressbar" style="width: 100%"><span class="health">100</span></div>
                 </div>
@@ -24,23 +26,24 @@
                 <h4>Number of Dice <span class="dice">1</span></h4>
                 <button class="btn btn-primary roll">Roll Your Dice</button>
                 <h3>Player 1 rolls <span class="showDice"></span></h3>
-                <button class="btn btn-primary clickAttack">Attack for <span class="attack">_</span></button> 
+                <button class="btn btn-primary hide clickAttack">Attack for <span class="attack">_</span></button> 
                 <br/><br/>
-                <button class="btn btn-primary clickTakeDamage">Take damage for <span class="takeDamage">_</span> and gain 1 additional die</button>
+                <button class="btn btn-primary hide clickTakeDamage">Take damage for <span class="takeDamage">_</span> and gain 1 additional die</button>
             </div>
             
             <div class="col-xs-4 col-xs-offset-2 player-2">
                 <h3><span class="glyphicon glyphicon-chevron-right red"></span> Player 2</h3>
+                
                 <div class="progress">
                     <div class="progress-bar progress-bar-danger healthBar" role="progressbar" style="width: 100%"><span class="health">100</span></div>
                 </div>
                 <h4>Health Status <span class="health">100</span></h4>
                 <h4>Number of Dice <span class="dice">1</span></h4>
-                <button class="btn btn-danger roll" disabled>Roll Your Dice</button>
+                <button class="btn btn-danger roll" >Roll Your Dice</button>
                 <h3>Player 2 rolls <span class="showDice"></span></h3>
-                <button class="btn btn-danger clickAttack" disabled>Attack for <span class="attack">_</span></button> 
+                <button class="btn btn-danger hide clickAttack">Attack for <span class="attack">_</span></button> 
                 <br/><br/>
-                <button class="btn btn-danger clickTakeDamage"disabled>Take damage for <span class="takeDamage">_</span> and gain 1 additional die</button>
+                <button class="btn btn-danger hide clickTakeDamage">Take damage for <span class="takeDamage">_</span> and gain 1 additional die</button>
             </div>
             
         </div>
@@ -63,6 +66,8 @@
                 </ol>
             </div>
         </div>
+        
+        
         
     </div>
     
