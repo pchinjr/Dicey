@@ -26,3 +26,7 @@
     display: inline-block;
     transform: scale(-1, 1)
 }
+
+.showDice {
+    font-size: 2em;
+}
