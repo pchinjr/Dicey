@@ -40,11 +40,11 @@ function checkWinner() {
     if ( parseInt( player1.dom.find('.health').text(), 10) <= 0) {
         $('.animation-blue').animateSprite('play','die');
         setTimeout( stopBlue, 900);
-        $('#winner').html('Player 2 Wins!' + '<br/><br>' + '<a href="/index.html"><button class="btn btn-default btn-lg"> Play Again?</button></a>');
+        $('#winner').html('Player 2 Wins!' + '<br/><br>' + '<a href="http://pchinjr.github.io/dicey/"><button class="btn btn-default btn-lg"> Play Again?</button></a>');
     } else if ( parseInt( player2.dom.find('.health').text(), 10) <= 0) {
         $('.animation-red').animateSprite('play','die');
         setTimeout( stopRed, 900);
-        $('#winner').html('Player 1 Wins!' + '<br/><br>' + '<a href="/index.html"><button class="btn btn-default btn-lg"> Play Again?</button></a>');
+        $('#winner').html('Player 1 Wins!' + '<br/><br>' + '<a href="http://pchinjr.github.io/dicey/"><button class="btn btn-default btn-lg"> Play Again?</button></a>');
     } else {
       $('#winner').html('');       
     }
