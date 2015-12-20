@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css" type="text/css" />
         <title>Dice Wars</title>
     </head>
     
     <body>
-    <div class="jumbotron text-center">
-        <h1>Dicey</h1>
-        <p>A game of chance and aggression</p>
-        <h1 id="winner"></h1>
-    </div>        
+        
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Dicey</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <p class="navbar-text">A Game of Chance and Agression</p>
+            <li><a href="#" data-toggle="modal" data-target="#myModal">Rules</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
     <div class="container">
+        
+        <div class="row tron">
+            <div class="animation"></div>
+            <div class="animation2"></div>
+        </div>
         
         <div class="row">
             
             <div class="col-xs-4 col-xs-offset-1 player-1">
                 <h3><span class="glyphicon glyphicon-chevron-right blue"></span> Player 1</h3>
-                
                 <div class="progress">
                     <div class="progress-bar healthBar" role="progressbar" style="width: 100%"><span class="health">100</span></div>
                 </div>
@@ -33,7 +54,6 @@
             
             <div class="col-xs-4 col-xs-offset-2 player-2">
                 <h3><span class="glyphicon glyphicon-chevron-right red"></span> Player 2</h3>
-                
                 <div class="progress">
                     <div class="progress-bar progress-bar-danger healthBar" role="progressbar" style="width: 100%"><span class="health">100</span></div>
                 </div>
@@ -48,27 +68,32 @@
             
         </div>
         
-        <div class="row">
-            <div class="animation"></div>
-            <div class="animation2"></div>
+        
+        
+    </div>
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Rules</h4>
         </div>
-        
-        <div class="row">
-            <div class="col-xs-12 col-xs-offset-2">
-                <h3>Rules of the Game</h3>
-                <ol>
-                    <li>Player 1 goes first</li>
-                    <li>Each player starts with 1 six sided die</li>
-                    <li>Roll Your Dice</li>
-                    <li>You can either attack for what you roll</li>
-                    <li>Or you can take damage and gain an additional six sided die on your next turn</li>
-                    <li>First person to 0 health loses</li>
-                </ol>
-            </div>
+        <div class="modal-body">
+            <h3>Rules of the Game</h3>
+            <ol>
+                <li>Player 1 goes first</li>
+                <li>Each player starts with 1 six sided die</li>
+                <li>Roll Your Dice</li>
+                <li>You can either attack for what you roll</li>
+                <li>Or you can take damage and gain an additional six sided die on your next turn</li>
+                <li>First person to 0 health loses</li>
+            </ol>
         </div>
-        
-        
-        
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+        </div>
     </div>
     
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>

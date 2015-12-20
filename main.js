@@ -33,7 +33,6 @@ function takeDamage(player, hit) {
     player.dom.find('.healthBar').css('width', player.health+'%');
     player.dice = player.dice + 1;
     player.dom.find('.dice').html(player.dice);
-    
 }
 
 //check for winner
@@ -48,7 +47,6 @@ function checkWinner() {
 }
 
 function endTurn(player) {
-    
     if(player === 'player1') {
         player1.dom.find('.roll').prop("disabled", true);
         player2.dom.find('.roll').prop("disabled", false);
@@ -85,8 +83,7 @@ player2.dom.find(".clickAttack").on( 'click', function() {
    endTurn('player2');
 });
 
-
-//take damage
+//players take damage
 player1.dom.find(".clickTakeDamage").on( 'click', function() {
     takeDamage( player1, parseInt( player1.dom.find('.takeDamage').text(), 10) );
     endTurn('player1');

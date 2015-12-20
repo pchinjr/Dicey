@@ -6,12 +6,6 @@
     color: red;
 }
 
-.jumbotron {
-    background-image: url(bg.jpg);
-    color: white;
-    text-shadow: black 0.3em 0.3em 0.3em;
-}
-
 .animation {
     background: url(spritesheet.png);
     width: 567px;
@@ -29,4 +23,24 @@
 
 .showDice {
     font-size: 2em;
+}
+
+.animation-new {
+    background: url(4actionspritesheet.png);
+    width: 408px;
+    height: 401px;
+    display: inline-block;
+}
+
+.animation2-new {
+    background: url(4actionspritesheet-blue.png);
+    width: 408px;
+    height: 401px;
+     transform: scale(-1, 1);
+    display: inline-block;
+}
+
+.tron {
+    background-image: url(bg.jpg);
+    background-size: cover
 }
