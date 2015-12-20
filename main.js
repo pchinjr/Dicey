@@ -1,4 +1,4 @@
-var player1 = { dom: $('.player-1'), health:100, dice: 1};
+var player1 = { dom: $('.player-1'), health:100, dice: 1 };
 var player2 = { dom: $('.player-2'), health:100, dice: 1 };
 
 //roll the player's dice and show results of individual dice on the screen
@@ -38,9 +38,13 @@ function takeDamage(player, hit) {
 //check for winner
 function checkWinner() {
     if ( parseInt( player1.dom.find('.health').text(), 10) <= 0) {
-        $('#winner').html('Player 2 Wins!');
+        $('.animation-blue').animateSprite('play','die');
+        setTimeout( stopBlue, 900);
+        $('#winner').html('Player 2 Wins!' + '<br/><br>' + '<a href="/index.html"><button class="btn btn-default btn-lg"> Play Again?</button></a>');
     } else if ( parseInt( player2.dom.find('.health').text(), 10) <= 0) {
-        $('#winner').html('Player 1 Wins!');
+        $('.animation-red').animateSprite('play','die');
+        setTimeout( stopRed, 900);
+        $('#winner').html('Player 1 Wins!' + '<br/><br>' + '<a href="/index.html"><button class="btn btn-default btn-lg"> Play Again?</button></a>');
     } else {
       $('#winner').html('');       
     }
@@ -50,11 +54,11 @@ function endTurn(player) {
     if(player === 'player1') {
         player1.dom.find('.roll').prop("disabled", true);
         player2.dom.find('.roll').prop("disabled", false);
-        player1.dom.find('.clickAttack, .clickTakeDamage').toggleClass('hide');
+        player1.dom.find('.clickAttack, .clickTakeDamage, .roll').toggleClass('hide');
     } else {
         player2.dom.find('.roll').prop("disabled", true);
         player1.dom.find('.roll').prop("disabled", false);
-        player2.dom.find('.clickAttack, .clickTakeDamage').toggleClass('hide');
+        player2.dom.find('.clickAttack, .clickTakeDamage, .roll').toggleClass('hide');
     }
 }
 
@@ -62,20 +66,19 @@ function endTurn(player) {
 player1.dom.find(".roll").on( 'click', function() {
     dieroll(player1);
     player1.dom.find('.roll').prop("disabled", true);
-    player1.dom.find('.clickAttack, .clickTakeDamage').toggleClass('hide');
+    player1.dom.find('.clickAttack, .clickTakeDamage, .roll').toggleClass('hide');
 });
 
 player2.dom.find(".roll").on( 'click', function() {
     dieroll(player2);
     player2.dom.find('.roll').prop("disabled", true);
-    player2.dom.find('.clickAttack, .clickTakeDamage').toggleClass('hide');
+    player2.dom.find('.clickAttack, .clickTakeDamage, .roll').toggleClass('hide');
 });
 
 //players attack
 player1.dom.find(".clickAttack").on( 'click', function() {
    attack( player2, parseInt( player1.dom.find('.attack').text(), 10) );
    endTurn('player1');
-   
 });
 
 player2.dom.find(".clickAttack").on( 'click', function() {

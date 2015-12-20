@@ -18,7 +18,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Dicey</a>
+          <a class="navbar-brand" href="/">Dicey</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
@@ -30,10 +30,10 @@
     </nav>
     
     <div class="container">
-        
-        <div class="row tron">
-            <div class="animation"></div>
-            <div class="animation2"></div>
+        <div class="text-center"><h1 id="winner"></h1></div>
+        <div class="tron text-center">
+            <div class="animation-blue"></div>
+            <div class="animation-red"></div>
         </div>
         
         <div class="row">
@@ -41,29 +41,29 @@
             <div class="col-xs-4 col-xs-offset-1 player-1">
                 <h3><span class="glyphicon glyphicon-chevron-right blue"></span> Player 1</h3>
                 <div class="progress">
-                    <div class="progress-bar healthBar" role="progressbar" style="width: 100%"><span class="health">100</span></div>
+                    <div class="progress-bar healthBar" role="progressbar" style="width: 100%"><span class="health">100</span>%</div>
                 </div>
-                <h4>Health Status <span class="health">100</span></h4>
-                <h4>Number of Dice <span class="dice">1</span></h4>
-                <button class="btn btn-primary roll">Roll Your Dice</button>
-                <h3>Player 1 rolls <span class="showDice"></span></h3>
-                <button class="btn btn-primary hide clickAttack">Attack for <span class="attack">_</span></button> 
-                <br/><br/>
+                <h4>Hit Points: <span class="health">100</span> // Number of Dice: <span class="dice">1</span></h4>
+                <h1><span class="showDice">&#x2683</span></h1>
+                <div class="btn-group-vertical btn-group-lg">
+                <button class="btn btn-primary roll">Roll Your Dice</button><br/>
+                <button class="btn btn-primary hide clickAttack">Attack for <span class="attack">_</span></button><br/>                 
                 <button class="btn btn-primary hide clickTakeDamage">Take damage for <span class="takeDamage">_</span> and gain 1 additional die</button>
+                </div>
             </div>
             
             <div class="col-xs-4 col-xs-offset-2 player-2">
                 <h3><span class="glyphicon glyphicon-chevron-right red"></span> Player 2</h3>
                 <div class="progress">
-                    <div class="progress-bar progress-bar-danger healthBar" role="progressbar" style="width: 100%"><span class="health">100</span></div>
+                    <div class="progress-bar progress-bar-danger healthBar" role="progressbar" style="width: 100%"><span class="health">100</span>%</div>
                 </div>
-                <h4>Health Status <span class="health">100</span></h4>
-                <h4>Number of Dice <span class="dice">1</span></h4>
-                <button class="btn btn-danger roll" >Roll Your Dice</button>
-                <h3>Player 2 rolls <span class="showDice"></span></h3>
-                <button class="btn btn-danger hide clickAttack">Attack for <span class="attack">_</span></button> 
-                <br/><br/>
+                <h4>Hit Points: <span class="health">100</span> // Number of Dice: <span class="dice">1</span></h4>
+                <h1><span class="showDice">&#x2683</span></h1>
+                <div class="btn-group-vertical btn-group-lg">
+                <button class="btn btn-danger roll" disabled>Roll Your Dice</button><br/>
+                <button class="btn btn-danger hide clickAttack">Attack for <span class="attack">_</span></button><br/> 
                 <button class="btn btn-danger hide clickTakeDamage">Take damage for <span class="takeDamage">_</span> and gain 1 additional die</button>
+                </div>
             </div>
             
         </div>

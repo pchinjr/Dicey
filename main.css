@@ -6,41 +6,46 @@
     color: red;
 }
 
-.animation {
-    background: url(spritesheet.png);
-    width: 567px;
-    height: 566px;
-    display: inline-block;
-}
-
-.animation2 {
-    background: url(spritesheet.png);
-    width: 567px;
-    height: 566px;
-    transform: scale(-1, 1);
-    display: inline-block;
-}
-
 .showDice {
     font-size: 2em;
 }
 
-.animation-new {
+.animation-red {
     background: url(4actionspritesheet.png);
     width: 408px;
     height: 401px;
+    transform: scale(-1, 1);
     display: inline-block;
 }
 
-.animation2-new {
+.animation-blue {
     background: url(4actionspritesheet-blue.png);
     width: 408px;
     height: 401px;
-     transform: scale(-1, 1);
     display: inline-block;
 }
 
 .tron {
     background-image: url(bg.jpg);
-    background-size: cover
+    background-size: cover;
+    color: white;
+    font-size: 5em;
+}
+
+.progress {
+    height: 2em;
+}
+
+.progress span {
+    font-size: 1.5em;
+}
+
+#winner {
+    color: white;
+    font-size: 3em;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 2.5em;
+    left: 0;
 }
