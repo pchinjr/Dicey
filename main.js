@@ -1,4 +1,4 @@
-var player1 = { dom: $('.player-1'), health:100, dice: 1 };
+var player1 = { dom: $('.player-1'), health:95, dice: 1 };
 var player2 = { dom: $('.player-2'), health:100, dice: 1 };
 
 //roll the player's dice and show results of individual dice on the screen
